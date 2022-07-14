@@ -39,5 +39,6 @@ fov = 104.2
 enabled = true
 cast_to = Vector3( 0, 0, -180 )
 collide_with_areas = true
+collide_with_bodies = false
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
