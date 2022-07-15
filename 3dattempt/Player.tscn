@@ -70,4 +70,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.463711, -0.275836, 0.375644 
 [node name="shootGun" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 3 )
 unit_db = -6.372
-pitch_scale = 3.48
+pitch_scale = 2.16
