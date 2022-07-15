@@ -8,6 +8,7 @@ var jump = 4.5
 var gravity = 9.8
 var stick_amount = 10
 var mouse_sensitivity = 1
+var sound_played=false
 
 var direction = Vector3()
 var velocity = Vector3()
@@ -17,7 +18,7 @@ var grounded = true
 
 onready var InteractLabel=get_node("UI/InteractLabel")
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -49,7 +50,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pass
-	if $Head/RayCast.is_colliding():
+	if $Head/RayCast.is_colliding() and $Head/RayCast.get_collider().get_parent().is_in_group("Interactibles"):
 		InteractLabel.set_visible(true)
 	if Input.is_action_pressed("interact") and $Head/RayCast.is_colliding():
 		print("collision")
@@ -60,6 +61,13 @@ func _physics_process(delta):
 		print(path)
 		InteractLabel.set_visible(false)
 		path._on_interact()
+	if Input.is_action_pressed("use_ability"):
+		$shootGun.play()
+		if $Head/GunShoot.is_colliding():
+			var collider=$Head/GunShoot.get_collider()
+			print(collider)
+			if collider.get_parent().is_in_group("Enemies"):
+				collider.get_parent().queue_free()
 	
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta)
 	movement.z = velocity.z + gravity_vec.z

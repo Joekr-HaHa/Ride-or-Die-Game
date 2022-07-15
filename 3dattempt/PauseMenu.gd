@@ -9,7 +9,8 @@ func _unhandled_input(event):
 		if self.is_paused==true:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if self.is_paused==false:
-			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+			#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func set_is_paused(value):
 	is_paused=value
@@ -19,7 +20,8 @@ func set_is_paused(value):
 
 
 func _on_ResumeBtn_pressed():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	self.is_paused=false
 
 

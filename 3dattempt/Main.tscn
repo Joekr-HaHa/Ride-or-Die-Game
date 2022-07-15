@@ -25,12 +25,12 @@ collision_mask = 2
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
-[node name="Door" parent="." instance=ExtResource( 3 )]
+[node name="Door" parent="." groups=["Interactibles"] instance=ExtResource( 3 )]
 
 [node name="door_typeB" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8815, 1.29721, 5.81742 )
 
-[node name="door_typeB2" parent="." instance=ExtResource( 4 )]
+[node name="door_typeB2" parent="." groups=["Interactibles"] instance=ExtResource( 4 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -4.1138, 0.0477976, -3.6908 )
 
 [node name="tree_shrub" parent="." instance=ExtResource( 7 )]
@@ -50,5 +50,5 @@ transform = Transform( 0.13926, 0, 0.990256, 0, 1, 0, -0.990256, 0, 0.13926, -2.
 
 [node name="GUI" parent="." instance=ExtResource( 12 )]
 
-[node name="Enemy" parent="." instance=ExtResource( 13 )]
+[node name="Enemy" parent="." groups=["Enemies"] instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07881, 6.25706 )

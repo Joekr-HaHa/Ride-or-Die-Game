@@ -11,5 +11,5 @@ dest_files=[ "res://.import/9mm-pistol-shoot-short-reverb-7152.mp3-0e152cd426912
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

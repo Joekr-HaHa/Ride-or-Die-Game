@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Audio/kenney_impactsounds/Audio/9mm-pistol-shoot-short-reverb-7152.mp3" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -24,6 +25,7 @@ __meta__ = {
 }
 
 [node name="InteractLabel" type="Label" parent="UI"]
+visible = false
 margin_left = 9.0
 margin_top = 515.0
 margin_right = 1022.0
@@ -47,6 +49,12 @@ material/0 = SubResource( 3 )
 current = true
 fov = 104.2
 
+[node name="GunShoot" type="RayCast" parent="Head"]
+enabled = true
+cast_to = Vector3( 0, 0, -200 )
+collision_mask = 2
+collide_with_areas = true
+
 [node name="RayCast" type="RayCast" parent="Head"]
 enabled = true
 cast_to = Vector3( 0, 0, -2 )
@@ -56,8 +64,10 @@ collide_with_bodies = false
 [node name="Hand" type="Spatial" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.552264 )
 
-[node name="Gun" type="Spatial" parent="Head/Hand" instance=ExtResource( 2 )]
+[node name="Gun" parent="Head/Hand" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.463711, -0.275836, 0.375644 )
 
-[node name="Gun Shoot" type="RayCast" parent="Head"]
-cast_to = Vector3( 0, 0, -200 )
+[node name="shootGun" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_db = -6.372
+pitch_scale = 3.48
