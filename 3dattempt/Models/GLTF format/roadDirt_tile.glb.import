@@ -11,7 +11,7 @@ dest_files=[ "res://.import/roadDirt_tile.glb-a1cf47380e1f2e9c5338482fd5bdba4a.s
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="StaticBody"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

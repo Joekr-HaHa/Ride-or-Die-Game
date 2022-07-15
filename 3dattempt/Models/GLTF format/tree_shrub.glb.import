@@ -11,7 +11,7 @@ dest_files=[ "res://.import/tree_shrub.glb-30db47fe06f2a67bb08ba2a72e8541d9.scn"
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="StaticBody"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""

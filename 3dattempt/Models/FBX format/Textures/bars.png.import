@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/bars.png-5002e2e82376770b4accb431afa580ff.s3tc.stex"
-path.etc2="res://.import/bars.png-5002e2e82376770b4accb431afa580ff.etc2.stex"
+path.s3tc="res://.import/bars.png-1a48d45e5c571ac80c8ff6ef5dfb96d2.s3tc.stex"
+path.etc2="res://.import/bars.png-1a48d45e5c571ac80c8ff6ef5dfb96d2.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/textures/bars.png"
-dest_files=[ "res://.import/bars.png-5002e2e82376770b4accb431afa580ff.s3tc.stex", "res://.import/bars.png-5002e2e82376770b4accb431afa580ff.etc2.stex" ]
+source_file="res://Models/FBX format/Textures/bars.png"
+dest_files=[ "res://.import/bars.png-1a48d45e5c571ac80c8ff6ef5dfb96d2.s3tc.stex", "res://.import/bars.png-1a48d45e5c571ac80c8ff6ef5dfb96d2.etc2.stex" ]
 
 [params]
 
