@@ -15,6 +15,10 @@ var movement = Vector3()
 var gravity_vec = Vector3()
 var grounded = true
 
+onready var InteractLabel=get_node("UI/InteractLabel")
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10
@@ -26,6 +30,7 @@ func _input(event):
 	direction = direction.normalized().rotated(Vector3.UP, rotation.y)
 
 func _physics_process(delta):
+	InteractLabel.set_visible(false)
 	if is_on_floor():
 		gravity_vec = -get_floor_normal() * stick_amount
 		acceleration = ground_acceleration
@@ -41,6 +46,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		grounded = false
 		gravity_vec = Vector3.UP * jump
+	if Input.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if $Head/RayCast.is_colliding():
+		InteractLabel.set_visible(true)
 	if Input.is_action_pressed("interact") and $Head/RayCast.is_colliding():
 		print("collision")
 		var collider=$Head/RayCast.get_collider()
@@ -48,6 +57,7 @@ func _physics_process(delta):
 		print(collider.get_path())
 		var path=collider.get_parent()
 		print(path)
+		InteractLabel.set_visible(false)
 		path._on_interact()
 	
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta)
