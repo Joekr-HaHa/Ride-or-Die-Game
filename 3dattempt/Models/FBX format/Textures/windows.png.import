@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/windows.png-1c672ad470e9614714479891cc067f34.s3tc.stex"
-path.etc2="res://.import/windows.png-1c672ad470e9614714479891cc067f34.etc2.stex"
+path.s3tc="res://.import/windows.png-632c2de58895118a05ce31245fb292c8.s3tc.stex"
+path.etc2="res://.import/windows.png-632c2de58895118a05ce31245fb292c8.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/textures/windows.png"
-dest_files=[ "res://.import/windows.png-1c672ad470e9614714479891cc067f34.s3tc.stex", "res://.import/windows.png-1c672ad470e9614714479891cc067f34.etc2.stex" ]
+source_file="res://Models/FBX format/Textures/windows.png"
+dest_files=[ "res://.import/windows.png-632c2de58895118a05ce31245fb292c8.s3tc.stex", "res://.import/windows.png-632c2de58895118a05ce31245fb292c8.etc2.stex" ]
 
 [params]
 

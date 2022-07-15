@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/metal.png-5441286d2954508a844000d00895bf81.s3tc.stex"
-path.etc2="res://.import/metal.png-5441286d2954508a844000d00895bf81.etc2.stex"
+path.s3tc="res://.import/metal.png-5c86a5731433564021ec6027c54e2b85.s3tc.stex"
+path.etc2="res://.import/metal.png-5c86a5731433564021ec6027c54e2b85.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/textures/metal.png"
-dest_files=[ "res://.import/metal.png-5441286d2954508a844000d00895bf81.s3tc.stex", "res://.import/metal.png-5441286d2954508a844000d00895bf81.etc2.stex" ]
+source_file="res://Models/FBX format/Textures/metal.png"
+dest_files=[ "res://.import/metal.png-5c86a5731433564021ec6027c54e2b85.s3tc.stex", "res://.import/metal.png-5c86a5731433564021ec6027c54e2b85.etc2.stex" ]
 
 [params]
 
