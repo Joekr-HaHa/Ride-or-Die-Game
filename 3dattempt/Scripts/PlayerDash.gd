@@ -2,7 +2,7 @@ extends KinematicBody
 
 var speed = 8
 var normalSpeed = 8
-var dashSpeed = 24
+var dashSpeed = 32
 var ground_acceleration = 8
 var air_acceleration = 2
 var acceleration = ground_acceleration
@@ -17,9 +17,12 @@ var movement = Vector3()
 var gravity_vec = Vector3()
 var grounded = true
 
+var dashDelay = 2
+var canDash = true
+
 onready var InteractLabel=get_node("UI/InteractLabel")
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -63,8 +66,12 @@ func _physics_process(delta):
 		print(path)
 		InteractLabel.set_visible(false)
 		path._on_interact() 
-	if Input.is_action_pressed("use_ability"):
+	if Input.is_action_pressed("use_ability") and canDash == true:
 		speed = dashSpeed
+		canDash = false
+		yield(get_tree().create_timer(dashDelay),"timeout")
+		canDash = true
+		
 	
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta)
 	movement.z = velocity.z + gravity_vec.z
@@ -75,5 +82,5 @@ func _physics_process(delta):
 		
 	# Reduce speed back to normal after a dash
 	if speed > normalSpeed:
-		speed -= 0.5
-
+		speed -= 1
+	

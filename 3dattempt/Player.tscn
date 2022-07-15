@@ -20,9 +20,6 @@ __meta__ = {
 [node name="UI" type="Control" parent="."]
 margin_right = 1026.0
 margin_bottom = 602.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="InteractLabel" type="Label" parent="UI"]
 visible = false
