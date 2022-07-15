@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/asphalt.png-1c46f1bb2e1ae97c82fa816c1aec32ad.s3tc.stex"
-path.etc2="res://.import/asphalt.png-1c46f1bb2e1ae97c82fa816c1aec32ad.etc2.stex"
+path.s3tc="res://.import/asphalt.png-f31a19eb69fd585ec131e6dd2b956556.s3tc.stex"
+path.etc2="res://.import/asphalt.png-f31a19eb69fd585ec131e6dd2b956556.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/Textures/asphalt.png"
-dest_files=[ "res://.import/asphalt.png-1c46f1bb2e1ae97c82fa816c1aec32ad.s3tc.stex", "res://.import/asphalt.png-1c46f1bb2e1ae97c82fa816c1aec32ad.etc2.stex" ]
+source_file="res://Models/FBX format/textures/asphalt.png"
+dest_files=[ "res://.import/asphalt.png-f31a19eb69fd585ec131e6dd2b956556.s3tc.stex", "res://.import/asphalt.png-f31a19eb69fd585ec131e6dd2b956556.etc2.stex" ]
 
 [params]
 

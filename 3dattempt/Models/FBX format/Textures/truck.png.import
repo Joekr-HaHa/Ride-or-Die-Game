@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/truck.png-72b38422668c3ae662a6e5794963af5b.s3tc.stex"
-path.etc2="res://.import/truck.png-72b38422668c3ae662a6e5794963af5b.etc2.stex"
+path.s3tc="res://.import/truck.png-881d2ac876033a21c0699e33bae0de71.s3tc.stex"
+path.etc2="res://.import/truck.png-881d2ac876033a21c0699e33bae0de71.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/Textures/truck.png"
-dest_files=[ "res://.import/truck.png-72b38422668c3ae662a6e5794963af5b.s3tc.stex", "res://.import/truck.png-72b38422668c3ae662a6e5794963af5b.etc2.stex" ]
+source_file="res://Models/FBX format/textures/truck.png"
+dest_files=[ "res://.import/truck.png-881d2ac876033a21c0699e33bae0de71.s3tc.stex", "res://.import/truck.png-881d2ac876033a21c0699e33bae0de71.etc2.stex" ]
 
 [params]
 

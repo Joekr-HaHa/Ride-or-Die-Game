@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wall_garage.png-52a98fa70771717dbad3583e7b3436e5.s3tc.stex"
-path.etc2="res://.import/wall_garage.png-52a98fa70771717dbad3583e7b3436e5.etc2.stex"
+path.s3tc="res://.import/wall_garage.png-ac59a808f0a38a2b47439b4ad76a6db2.s3tc.stex"
+path.etc2="res://.import/wall_garage.png-ac59a808f0a38a2b47439b4ad76a6db2.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/Textures/wall_garage.png"
-dest_files=[ "res://.import/wall_garage.png-52a98fa70771717dbad3583e7b3436e5.s3tc.stex", "res://.import/wall_garage.png-52a98fa70771717dbad3583e7b3436e5.etc2.stex" ]
+source_file="res://Models/FBX format/textures/wall_garage.png"
+dest_files=[ "res://.import/wall_garage.png-ac59a808f0a38a2b47439b4ad76a6db2.s3tc.stex", "res://.import/wall_garage.png-ac59a808f0a38a2b47439b4ad76a6db2.etc2.stex" ]
 
 [params]
 

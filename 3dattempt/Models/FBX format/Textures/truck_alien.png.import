@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/truck_alien.png-39d02f321024d1f4935632d9c7f4a276.s3tc.stex"
-path.etc2="res://.import/truck_alien.png-39d02f321024d1f4935632d9c7f4a276.etc2.stex"
+path.s3tc="res://.import/truck_alien.png-317715431774295108357686b56ec09c.s3tc.stex"
+path.etc2="res://.import/truck_alien.png-317715431774295108357686b56ec09c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/Textures/truck_alien.png"
-dest_files=[ "res://.import/truck_alien.png-39d02f321024d1f4935632d9c7f4a276.s3tc.stex", "res://.import/truck_alien.png-39d02f321024d1f4935632d9c7f4a276.etc2.stex" ]
+source_file="res://Models/FBX format/textures/truck_alien.png"
+dest_files=[ "res://.import/truck_alien.png-317715431774295108357686b56ec09c.s3tc.stex", "res://.import/truck_alien.png-317715431774295108357686b56ec09c.etc2.stex" ]
 
 [params]
 

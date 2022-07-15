@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/roof_plates.png-303c1be6df8761bd1e6cb546afdabd3e.s3tc.stex"
-path.etc2="res://.import/roof_plates.png-303c1be6df8761bd1e6cb546afdabd3e.etc2.stex"
+path.s3tc="res://.import/roof_plates.png-6e2821cf3321305057f9d75ae29acf38.s3tc.stex"
+path.etc2="res://.import/roof_plates.png-6e2821cf3321305057f9d75ae29acf38.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/Textures/roof_plates.png"
-dest_files=[ "res://.import/roof_plates.png-303c1be6df8761bd1e6cb546afdabd3e.s3tc.stex", "res://.import/roof_plates.png-303c1be6df8761bd1e6cb546afdabd3e.etc2.stex" ]
+source_file="res://Models/FBX format/textures/roof_plates.png"
+dest_files=[ "res://.import/roof_plates.png-6e2821cf3321305057f9d75ae29acf38.s3tc.stex", "res://.import/roof_plates.png-6e2821cf3321305057f9d75ae29acf38.etc2.stex" ]
 
 [params]
 

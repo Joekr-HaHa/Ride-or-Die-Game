@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wall_metal.png-b18e97aaa38835cd22981c8eb2ea9c87.s3tc.stex"
-path.etc2="res://.import/wall_metal.png-b18e97aaa38835cd22981c8eb2ea9c87.etc2.stex"
+path.s3tc="res://.import/wall_metal.png-31be7581626651d25bda1fed8974cc3f.s3tc.stex"
+path.etc2="res://.import/wall_metal.png-31be7581626651d25bda1fed8974cc3f.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/Textures/wall_metal.png"
-dest_files=[ "res://.import/wall_metal.png-b18e97aaa38835cd22981c8eb2ea9c87.s3tc.stex", "res://.import/wall_metal.png-b18e97aaa38835cd22981c8eb2ea9c87.etc2.stex" ]
+source_file="res://Models/FBX format/textures/wall_metal.png"
+dest_files=[ "res://.import/wall_metal.png-31be7581626651d25bda1fed8974cc3f.s3tc.stex", "res://.import/wall_metal.png-31be7581626651d25bda1fed8974cc3f.etc2.stex" ]
 
 [params]
 

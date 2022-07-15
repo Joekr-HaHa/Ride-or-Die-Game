@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/concreteSmooth.png-cebe8d1a307a0d412686a8b992ded6a4.s3tc.stex"
-path.etc2="res://.import/concreteSmooth.png-cebe8d1a307a0d412686a8b992ded6a4.etc2.stex"
+path.s3tc="res://.import/concreteSmooth.png-6d48000a96b098b842047291a687b157.s3tc.stex"
+path.etc2="res://.import/concreteSmooth.png-6d48000a96b098b842047291a687b157.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/FBX format/Textures/concreteSmooth.png"
-dest_files=[ "res://.import/concreteSmooth.png-cebe8d1a307a0d412686a8b992ded6a4.s3tc.stex", "res://.import/concreteSmooth.png-cebe8d1a307a0d412686a8b992ded6a4.etc2.stex" ]
+source_file="res://Models/FBX format/textures/concreteSmooth.png"
+dest_files=[ "res://.import/concreteSmooth.png-6d48000a96b098b842047291a687b157.s3tc.stex", "res://.import/concreteSmooth.png-6d48000a96b098b842047291a687b157.etc2.stex" ]
 
 [params]
 
