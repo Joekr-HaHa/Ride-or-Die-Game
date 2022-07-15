@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Models/GLTF format/metal.material" type="Material" id=1]
 [ext_resource path="res://Models/GLTF format/doors.material" type="Material" id=2]
+[ext_resource path="res://doorB.gd" type="Script" id=3]
+
+[sub_resource type="BoxShape" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "door_typeB_Mesh door_typeB"
@@ -30,9 +33,12 @@ surfaces/1 = {
 "vertex_count": 44
 }
 
-[sub_resource type="BoxShape" id=2]
-
 [node name="door_typeB" type="StaticBody"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.55, 0, 0, 0, 0.15, 0, 0.305284, 0 )
+shape = SubResource( 2 )
 
 [node name="tmpParent" type="Spatial" parent="."]
 
@@ -41,6 +47,9 @@ mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.2, 0, 0, 0, 0.32, 0, 0, 0, 0.02, 0, 0.305284, 0 )
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.9407e-08, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1.55, 0, 0, 0, 0.15, 0, 0.305284, 0 )
 shape = SubResource( 2 )
