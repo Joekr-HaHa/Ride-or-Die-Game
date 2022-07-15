@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Gun.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[sub_resource type="VisualShaderNodeColorConstant" id=4]
+output_port_for_preview = 0
+constant = Color( 0.828125, 0.0192587, 0.0192587, 1 )
+
+[sub_resource type="VisualShader" id=5]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx;
+
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Color:2
+	vec3 n_out2p0 = vec3(0.828125, 0.019259, 0.019259);
+	float n_out2p1 = 1.000000;
+
+// Output:0
+	ALBEDO = n_out2p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -52.68, 42.75 )
+nodes/fragment/2/node = SubResource( 4 )
+nodes/fragment/2/position = Vector2( 105.64, 243.5 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 5 )
+
+[node name="Enemy" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10776, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="UI" type="Control" parent="."]
+margin_right = 1026.0
+margin_bottom = 602.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractLabel" type="Label" parent="UI"]
+margin_left = 9.0
+margin_top = 515.0
+margin_right = 1022.0
+margin_bottom = 546.0
+text = "Press E to interact"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, -0.259652, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Hand" type="Spatial" parent="MeshInstance"]
+transform = Transform( 2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, -1.10453, 0 )
+
+[node name="Gun" parent="MeshInstance/Hand" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.463711, -0.275836, 0.375644 )
+
+[node name="Gun Shoot" type="RayCast" parent="MeshInstance"]
+transform = Transform( 2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0, 0 )
+cast_to = Vector3( 0, 0, -200 )

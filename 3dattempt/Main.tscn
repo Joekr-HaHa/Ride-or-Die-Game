@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://doorB.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/GLTF format/door_typeB.glb" type="PackedScene" id=5]
@@ -12,12 +12,7 @@
 [ext_resource path="res://roadDirt_tile.tscn" type="PackedScene" id=10]
 [ext_resource path="res://wallA_corner.tscn" type="PackedScene" id=11]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=12]
-
-[sub_resource type="CapsuleShape" id=1]
-
-[sub_resource type="CapsuleMesh" id=2]
-
-[sub_resource type="ShaderMaterial" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=13]
 
 [node name="Main" type="Spatial"]
 
@@ -28,49 +23,7 @@ transform = Transform( -0.996548, 0, 0.083017, 0, 1, 0, -0.083017, 0, -0.996548,
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00222778, 0.0054391, 0.0021528 )
 collision_mask = 2
 
-[node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10776, 0 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="UI" type="Control" parent="Player"]
-margin_right = 1026.0
-margin_bottom = 602.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InteractLabel" type="Label" parent="Player/UI"]
-margin_left = 9.0
-margin_top = 515.0
-margin_right = 1022.0
-margin_bottom = 546.0
-text = "Press E to interact"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CollisionShape" type="CollisionShape" parent="Player"]
-transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, -0.259652, 0 )
-shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Player"]
-transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0 )
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
-
-[node name="Head" type="Camera" parent="Player"]
-current = true
-fov = 104.2
-
-[node name="RayCast" type="RayCast" parent="Player/Head"]
-enabled = true
-cast_to = Vector3( 0, 0, -2 )
-collide_with_areas = true
-collide_with_bodies = false
+[node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
 
@@ -96,3 +49,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0883662, 6.88642 )
 transform = Transform( 0.13926, 0, 0.990256, 0, 1, 0, -0.990256, 0, 0.13926, -2.12684, 0, 7.08136 )
 
 [node name="GUI" parent="." instance=ExtResource( 12 )]
+
+[node name="Enemy" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07881, 6.25706 )
