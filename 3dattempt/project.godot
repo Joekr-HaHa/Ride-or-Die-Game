@@ -14,6 +14,10 @@ config/name="3dattempt"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://Pictures/icon.png"
 
+[autoload]
+
+Global="*res://Scripts/global.gd"
+
 [input]
 
 move_forward={
