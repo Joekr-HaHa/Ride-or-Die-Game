@@ -65,7 +65,7 @@ func _physics_process(delta):
 		var path=collider.get_parent()
 		print(path)
 		InteractLabel.set_visible(false)
-		path._on_interact() 
+		path._on_interact()
 	if Input.is_action_pressed("use_ability") and canDash == true:
 		# Dash
 		speed = dashSpeed
@@ -74,9 +74,10 @@ func _physics_process(delta):
 		if $Head/DashRayCast.is_colliding():
 			print("through wall")
 			var collider = $Head/DashRayCast.get_collider()
-			collider.get_node("CollisionShape").disabled = true
-			yield(get_tree().create_timer(1),"timeout")
-			collider.get_node("CollisionShape").disabled = false
+			if collider.name == "Wall":
+				collider.get_node("CollisionShape").disabled = true
+				yield(get_tree().create_timer(1),"timeout")
+				collider.get_node("CollisionShape").disabled = false
 		canDash = false
 		yield(get_tree().create_timer(dashDelay),"timeout")
 		canDash = true
