@@ -39,7 +39,11 @@ __meta__ = {
 current = true
 fov = 104.2
 
-[node name="RayCast" type="RayCast" parent="Head"]
+[node name="InteractRayCast" type="RayCast" parent="Head"]
 enabled = true
 cast_to = Vector3( 0, 0, -2 )
 collide_with_areas = true
+
+[node name="DashRayCast" type="RayCast" parent="Head"]
+enabled = true
+cast_to = Vector3( 0, 0, -5 )

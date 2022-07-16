@@ -55,25 +55,25 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pass
-	if $Head/RayCast.is_colliding():
+	if $Head/InteractRayCast.is_colliding():
 		InteractLabel.set_visible(true)
-	if Input.is_action_pressed("interact") and $Head/RayCast.is_colliding():
+	if Input.is_action_pressed("interact") and $Head/InteractRayCast.is_colliding():
 		print("collision")
-		var collider=$Head/RayCast.get_collider()
+		var collider=$Head/InteractRayCast.get_collider()
 		print(collider)
 		print(collider.get_path())
 		var path=collider.get_parent()
 		print(path)
 		InteractLabel.set_visible(false)
 		path._on_interact() 
-	if Input.is_action_pressed("test") and canDash == true:
+	if Input.is_action_pressed("use_ability") and canDash == true:
 		# Dash
 		speed = dashSpeed
 		print("dashing")
 		# If the player is about to dash through a wall need to disable collision layer for a bit 
-		if $Head/RayCast.is_colliding():
+		if $Head/DashRayCast.is_colliding():
 			print("through wall")
-			var collider = $Head/RayCast.get_collider()
+			var collider = $Head/DashRayCast.get_collider()
 			collider.get_node("CollisionShape").disabled = true
 			yield(get_tree().create_timer(1),"timeout")
 			collider.get_node("CollisionShape").disabled = false
