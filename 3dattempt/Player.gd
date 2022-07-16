@@ -70,7 +70,7 @@ func _physics_process(delta):
 			if $Head/GunShoot.is_colliding():
 				var collider=$Head/GunShoot.get_collider()
 				print(collider)
-				if collider.get_parent().is_in_group("Enemies"):
+				if collider.get_parent().is_in_group("Enemy"):
 					collider.get_parent().queue_free()
 	
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta)
