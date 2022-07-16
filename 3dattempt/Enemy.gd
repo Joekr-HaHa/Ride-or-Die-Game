@@ -42,4 +42,4 @@ func set_color_green():
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
-		body.queue_free()
+		get_tree().change_scene("res://Death.tscn")
