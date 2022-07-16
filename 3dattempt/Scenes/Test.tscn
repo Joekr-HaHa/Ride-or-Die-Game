@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/PlayerGrab.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Crate.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -36,5 +37,9 @@ material/0 = null
 transform = Transform( 5, 0, 0, 0, 2, 0, 0, 0, 0.25, 0, 2.5, 0 )
 shape = SubResource( 4 )
 
+[node name="Crate" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72, 1.5, -9.336 )
+linear_velocity = Vector3( 0, 0, 1 )
+
 [node name="PlayerGrab" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.719802, 1.5, -5.78561 )
+transform = Transform( -0.999988, 0, 0.00483441, 0, 1, 0, -0.00483441, 0, -0.999988, -6.0726, 2.19927, -5.65983 )
