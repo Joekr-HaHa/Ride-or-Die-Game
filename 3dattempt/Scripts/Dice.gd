@@ -46,7 +46,7 @@ func _input(event):
 		
 		yield(get_tree().create_timer(3),"timeout")
 		
-		get_tree().change_scene("res://Scenes/Main.tscn")
+		get_tree().change_scene("res://Scenes/Level1.tscn")
 		
 	
 

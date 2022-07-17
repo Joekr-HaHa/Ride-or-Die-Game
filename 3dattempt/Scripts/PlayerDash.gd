@@ -11,6 +11,11 @@ var gravity = 9.8
 var stick_amount = 10
 var mouse_sensitivity = 1
 
+onready var bar = get_node("UI/progressbar")
+var progress = 0
+var cooldown = false
+var bar_speed = 1 #0.25*2
+
 var direction = Vector3()
 var velocity = Vector3()
 var movement = Vector3()
@@ -66,6 +71,11 @@ func _physics_process(delta):
 		print(path)
 		InteractLabel.set_visible(false)
 		path._on_interact()
+	bar.value = progress
+	progress -= bar_speed
+	if progress <= 0:
+		cooldown = false
+		canDash=true
 	if Input.is_action_pressed("use_ability") and canDash == true:
 		# Dash
 		speed = dashSpeed
@@ -79,8 +89,10 @@ func _physics_process(delta):
 				yield(get_tree().create_timer(1),"timeout")
 				collider.get_node("CollisionShape").disabled = false
 		canDash = false
-		yield(get_tree().create_timer(dashDelay),"timeout")
-		canDash = true
+		#yield(get_tree().create_timer(dashDelay),"timeout")
+		cooldown = true
+		progress = 100
+		#canDash = true
 		
 	
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta)

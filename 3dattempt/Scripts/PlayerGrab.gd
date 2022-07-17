@@ -55,7 +55,9 @@ func _physics_process(delta):
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pass
 	if $Head/InteractRayCast.is_colliding():
-		InteractLabel.set_visible(true)
+		var path=$Head/InteractRayCast.get_collider().get_parent()
+		if path.is_in_group("Walls"):
+			InteractLabel.set_visible(true)
 	if Input.is_action_pressed("interact") and $Head/InteractRayCast.is_colliding():
 		print("collision")
 		var collider=$Head/InteractRayCast.get_collider()
@@ -64,7 +66,8 @@ func _physics_process(delta):
 		var path=collider.get_parent()
 		print(path)
 		InteractLabel.set_visible(false)
-		path._on_interact() 
+		if path.is_in_group("Walls"):
+			path._on_interact() 
 	if Input.is_action_pressed("use_ability") and $Head/InteractRayCast.is_colliding():
 		# Move crate with player 
 		var collider = $Head/InteractRayCast.get_collider()

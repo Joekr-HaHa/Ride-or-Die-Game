@@ -8,8 +8,13 @@ var jump = 4.5
 var gravity = 9.8
 var stick_amount = 10
 var mouse_sensitivity = 1
-var time_to_shoot=200
+var time_to_shoot=2000
 var next_attack_time=0
+
+onready var bar = get_node("UI/progressbar")
+var progress = 0
+var cooldown = false
+var bar_speed = 2
 
 var direction = Vector3()
 var velocity = Vector3()
@@ -63,10 +68,16 @@ func _physics_process(delta):
 		InteractLabel.set_visible(false)
 		path._on_interact()
 	var now=OS.get_ticks_msec()
+	bar.value = progress
+	progress -= bar_speed
+	if progress <= 0:
+		cooldown = false
 	if Input.is_action_pressed("use_ability"):
-		if now>=next_attack_time and self.get_node("Head").current:
+		if progress<=0 and self.get_node("Head").current:
 			$shootGun.play()
-			next_attack_time=now+time_to_shoot
+			progress=100
+			cooldown=true
+			#next_attack_time=now+time_to_shoot
 			if $Head/GunShoot.is_colliding():
 				var collider=$Head/GunShoot.get_collider()
 				print(collider)

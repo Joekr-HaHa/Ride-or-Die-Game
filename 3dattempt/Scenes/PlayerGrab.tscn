@@ -43,7 +43,7 @@ fov = 104.2
 
 [node name="InteractRayCast" type="RayCast" parent="Head"]
 enabled = true
-cast_to = Vector3( 0, 0, -2 )
+cast_to = Vector3( 0, 0, -4 )
 collide_with_areas = true
 
 [node name="Box" type="MeshInstance" parent="."]
