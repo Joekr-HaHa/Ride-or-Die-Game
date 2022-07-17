@@ -22,4 +22,4 @@ func _physics_process(delta):
 					print(i,i.get_parent(),i.is_in_group("Player"))
 				if i.is_in_group("Player"):
 						Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-						get_tree().change_scene("res://Scenes/TutPlayerDash.tscn")
+						get_tree().change_scene("res://Scenes/TutPlayerGrab.tscn")

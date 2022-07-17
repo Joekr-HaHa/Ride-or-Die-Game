@@ -30,7 +30,7 @@ margin_left = 9.0
 margin_top = 515.0
 margin_right = 1022.0
 margin_bottom = 546.0
-text = "Press E to interact"
+text = "Press left click to pick up"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

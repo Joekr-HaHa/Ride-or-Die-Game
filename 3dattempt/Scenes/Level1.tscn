@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/PlayerDash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/DestructArea.gd" type="Script" id=11]
 [ext_resource path="res://Models/dots.material" type="Material" id=12]
 [ext_resource path="res://Scenes/Goal.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Viewport.gd" type="Script" id=14]
 
 [sub_resource type="SphereShape" id=3]
 
@@ -20,6 +21,9 @@
 
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 10.2, 5.2, 0.6 )
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("3dLabel/Viewport")
 
 [node name="Level" type="Spatial"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
@@ -266,7 +270,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5965, -0.364156, -14.2715 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9826, -0.364156, -14.2715 )
 
 [node name="Wall23" parent="." groups=["Wall"] instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4965, -0.364156, -14.2715 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4965, -2.30127, -14.2715 )
 
 [node name="Wall15" parent="." groups=["Wall"] instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1113, -1.89666, -38.9042 )
@@ -408,7 +412,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.224
 [node name="Wall44" parent="." groups=["Wall"] instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.2247, -0.353034, 35.9407 )
 
-[node name="DestructableWall" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.7909, -0.516752, -4.95149 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall"]
@@ -427,7 +431,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
 
-[node name="DestructableWall2" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall2" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8653, -0.516752, -4.95149 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall2"]
@@ -446,7 +450,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
 
-[node name="DestructableWall5" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall5" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.2429, -0.516752, 16.7541 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall5"]
@@ -465,7 +469,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
 
-[node name="DestructableWall9" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall9" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4142, -0.516752, -19.5396 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall9"]
@@ -484,7 +488,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
 
-[node name="DestructableWall11" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall11" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9996, -0.516752, 5.82174 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall11"]
@@ -503,7 +507,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
 
-[node name="DestructableWall10" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall10" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.4918, -0.516752, -28.3488 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall10"]
@@ -522,7 +526,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
 
-[node name="DestructableWall3" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall3" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1082, -0.516752, -4.95149 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall3"]
@@ -541,7 +545,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
 
-[node name="DestructableWall6" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall6" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( 0.890189, 0, -0.455592, 0, 1, 0, 0.455592, 0, 0.890189, -18.9028, -0.516752, 29.2632 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall6"]
@@ -560,7 +564,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
 
-[node name="DestructableWall7" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall7" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.292, -0.516752, 25.9796 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall7"]
@@ -579,7 +583,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
 
-[node name="DestructableWall4" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 10 )]
+[node name="DestructableWall4" parent="." groups=["DestructWall"] instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4493, -0.516752, -4.95149 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall4"]
@@ -621,3 +625,23 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.6682
 
 [node name="Wall10" parent="." groups=["Wall"] instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.98229, -0.363208, -14.2673 )
+
+[node name="3dLabel" type="Sprite3D" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.93807, 0, 1, 0, -4.37114e-08, 17.0373, 1.67184, -45.5523 )
+flip_v = true
+texture = SubResource( 4 )
+
+[node name="Viewport" type="Viewport" parent="3dLabel"]
+size = Vector2( 400, 31 )
+transparent_bg = true
+script = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="3dLabel/Viewport"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Wonder if there's a route here?? hmmmm
+"
+align = 1
+valign = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]

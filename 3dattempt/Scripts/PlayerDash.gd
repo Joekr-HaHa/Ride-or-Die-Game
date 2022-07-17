@@ -61,7 +61,10 @@ func _physics_process(delta):
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pass
 	if $Head/InteractRayCast.is_colliding():
-		InteractLabel.set_visible(true)
+		var collider = $Head/DashRayCast.get_collider()
+		if collider !=null:
+			if collider.is_in_group("Wall"):#was ==wall
+				InteractLabel.set_visible(true)
 	if Input.is_action_pressed("interact") and $Head/InteractRayCast.is_colliding():
 		print("collision")
 		var collider=$Head/InteractRayCast.get_collider()

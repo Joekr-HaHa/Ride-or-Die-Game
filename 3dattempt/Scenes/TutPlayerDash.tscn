@@ -1,12 +1,17 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/DestructArea.gd" type="Script" id=1]
 [ext_resource path="res://Models/dots.material" type="Material" id=2]
 [ext_resource path="res://Scenes/Viewport.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Goal.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/GoalTutDash.gd" type="Script" id=4]
 [ext_resource path="res://Wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/wallA.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PlayerDash.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Viewport3.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Viewport2.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Viewport4.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("3dLabel/Viewport")
@@ -28,6 +33,8 @@ size = Vector3( 10.2, 5.2, 0.6 )
 [sub_resource type="SphereShape" id=7]
 
 [node name="TutPlayerDash" type="Spatial"]
+
+[node name="GUI" parent="." instance=ExtResource( 12 )]
 
 [node name="Floor" parent="." instance=ExtResource( 6 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0.0255299, 1.90735e-06, -0.01301 )
@@ -137,14 +144,14 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.5338,
 [node name="Wall3" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821011, 0, 3.33553 )
 
-[node name="Wall21" parent="." instance=ExtResource( 5 )]
+[node name="Wall21" parent="." groups=["Wall"] instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.410472, 0.00751591, -5.22551 )
 
 [node name="Wall4" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10502, 0, 3.33553 )
 
 [node name="3dLabel" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.93807, 0, 0, 0, 1, -2.14364, 2.43049, -4.82269 )
+transform = Transform( 1.10569, 0, 0, 0, 1.69352, 0, 0, 0, 1, -2.14364, 2.43049, -4.82269 )
 flip_v = true
 texture = SubResource( 1 )
 
@@ -154,6 +161,7 @@ transparent_bg = true
 script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="3dLabel/Viewport"]
+modulate = Color( 0.329412, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "As dash, you can get a directional dash using Left Click"
@@ -161,16 +169,17 @@ align = 1
 valign = 1
 
 [node name="3dLabel2" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 2.28677, 0, 0, 0, 1, 2.0767, 2.43049, -4.82269 )
+transform = Transform( 1.21801, 0, 0, 0, 1.7893, 0, 0, 0, 1, 2.43309, 2.43049, -4.82269 )
 flip_v = true
 texture = SubResource( 2 )
 
 [node name="Viewport2" type="Viewport" parent="3dLabel2"]
 size = Vector2( 400, 25 )
 transparent_bg = true
-script = ExtResource( 3 )
+script = ExtResource( 10 )
 
 [node name="Label2" type="Label" parent="3dLabel2/Viewport2"]
+modulate = Color( 0.0784314, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "You can also dash through walls when the prompt appears"
@@ -178,16 +187,17 @@ align = 1
 valign = 1
 
 [node name="3dLabel4" type="Sprite3D" parent="."]
-transform = Transform( 1.32922, 0, 0, 0, 2.8012, 0, 0, 0, 1, -0.795963, 2.24589, -16.1301 )
+transform = Transform( 1.32922, 0, 0, 0, 1.87052, 0, 0, 0, 1, -0.795963, 2.24589, -16.1301 )
 flip_v = true
 texture = SubResource( 3 )
 
 [node name="Viewport4" type="Viewport" parent="3dLabel4"]
 size = Vector2( 400, 48 )
 transparent_bg = true
-script = ExtResource( 3 )
+script = ExtResource( 11 )
 
 [node name="Label4" type="Label" parent="3dLabel4/Viewport4"]
+modulate = Color( 0.211765, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "You can't dash through dark grey walls
@@ -197,24 +207,26 @@ align = 1
 valign = 1
 
 [node name="3dLabel3" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.93947, 0, 0, 0, 1, 0.205065, 1.27397, -4.18103 )
+transform = Transform( 1.19628, 0, 0, 0, 1.93947, 0, 0, 0, 1, 0.205065, 1.27397, -4.18103 )
 flip_v = true
 billboard = 1
+transparent = false
 texture = SubResource( 4 )
 
 [node name="Viewport3" type="Viewport" parent="3dLabel3"]
 size = Vector2( 400, 25 )
 transparent_bg = true
-script = ExtResource( 3 )
+script = ExtResource( 9 )
 
 [node name="Label3" type="Label" parent="3dLabel3/Viewport3"]
+modulate = Color( 0.0941176, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "Move toward the wall and dash to proceed"
 align = 1
 valign = 1
 
-[node name="DestructableWall" parent="." groups=["DestructWall", "Wall"] instance=ExtResource( 5 )]
+[node name="DestructableWall" parent="." groups=["DestructWall"] instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85337, -0.516752, -16.7915 )
 
 [node name="DestructArea" type="Area" parent="DestructableWall"]
@@ -233,11 +245,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0746117, 2.03679, 0 )
 mesh = SubResource( 6 )
 material/0 = ExtResource( 2 )
 
-[node name="Goal" type="Area" parent="."]
+[node name="GoalTutDash" type="Area" parent="."]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.759449, -7.18067, -44.9136 )
 script = ExtResource( 4 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Goal"]
+[node name="CollisionShape" type="CollisionShape" parent="GoalTutDash"]
 transform = Transform( 3, 0, 0, 0, 4, 0, 0, 0, 2, -0.0380785, 3.75528, 0.345646 )
 shape = SubResource( 7 )
 
@@ -246,3 +258,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.759449, 2.96153, -44.9136 )
 light_color = Color( 0.243137, 1, 0, 1 )
 light_energy = 16.0
 omni_range = 13.048
+
+[node name="PlayerDash" parent="." groups=["Player"] instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.24819, 0 )
