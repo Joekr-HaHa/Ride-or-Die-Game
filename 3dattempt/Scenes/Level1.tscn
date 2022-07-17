@@ -63,6 +63,15 @@ transform = Transform( 0.741929, 0, -0.670478, 0, 1, 0, 0.670478, 0, 0.741929, 1
 [node name="Enemy10" parent="." groups=["Enemy"] instance=ExtResource( 3 )]
 transform = Transform( -0.765011, 0, 0.644017, 0, 1, 0, -0.644017, 0, -0.765011, 31.5752, 1.10776, -36.279 )
 
+[node name="Enemy34" parent="." groups=["Enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.962389, 0, -0.271676, 0, 1, 0, 0.271676, 0, 0.962389, 46.6172, 1.10776, -35.3544 )
+
+[node name="Enemy35" parent="." groups=["Enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.229557, 0, 0.973295, 0, 1, 0, -0.973295, 0, 0.229557, 45.8805, 1.10776, -26.577 )
+
+[node name="Enemy36" parent="." groups=["Enemy"] instance=ExtResource( 3 )]
+transform = Transform( 0.925758, 0, 0.378115, 0, 1, 0, -0.378115, 0, 0.925758, 45.8805, 1.10776, -0.161064 )
+
 [node name="Enemy11" parent="." groups=["Enemy"] instance=ExtResource( 3 )]
 transform = Transform( 0.830547, 0, -0.556948, 0, 1, 0, 0.556948, 0, 0.830547, 19.8025, 1.10776, -21.9213 )
 
