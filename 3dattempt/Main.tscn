@@ -1,29 +1,21 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/doorB.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://doorB.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/GLTF format/door_typeB.glb" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/windowSmall_typeA.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/tree_shrub.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/grass.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/tree_large.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/roadDirt_tile.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/wallA_corner.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/StartUpManager.gd" type="Script" id=14]
-[ext_resource path="res://Scenes/PlayerDash.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/PlayerGrab.tscn" type="PackedScene" id=16]
+[ext_resource path="res://windowSmall_typeA.tscn" type="PackedScene" id=6]
+[ext_resource path="res://tree_shrub.tscn" type="PackedScene" id=7]
+[ext_resource path="res://grass.tscn" type="PackedScene" id=8]
+[ext_resource path="res://tree_large.tscn" type="PackedScene" id=9]
+[ext_resource path="res://roadDirt_tile.tscn" type="PackedScene" id=10]
+[ext_resource path="res://wallA_corner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/wallA.tscn" type="PackedScene" id=14]
 
 [node name="Main" type="Spatial"]
-
-[node name="StartUpManager" type="Spatial" parent="."]
-script = ExtResource( 14 )
-
-[node name="PlayerSpawn" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27783, -8 )
 
 [node name="windowSmall_typeA" parent="." instance=ExtResource( 6 )]
 transform = Transform( -0.996548, 0, 0.083017, 0, 1, 0, -0.083017, 0, -0.996548, -1.89861, 0.282843, 7.10532 )
@@ -31,6 +23,9 @@ transform = Transform( -0.996548, 0, 0.083017, 0, 1, 0, -0.083017, 0, -0.996548,
 [node name="Floor" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00222778, 0.0054391, 0.0021528 )
 collision_mask = 2
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0.000780161, 6.9484e-05, -0.000780257, 0.999999, 0.00136156, -6.84062e-05, -0.00136161, 0.999999, 0, 1.10776, 0 )
 
 [node name="Door" parent="." groups=["Interactibles"] instance=ExtResource( 3 )]
 
@@ -57,6 +52,9 @@ transform = Transform( 0.13926, 0, 0.990256, 0, 1, 0, -0.990256, 0, 0.13926, -2.
 
 [node name="GUI" parent="." instance=ExtResource( 12 )]
 
+[node name="wallA" parent="GUI" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.64719, 0, 0 )
+
 [node name="Enemy" parent="." groups=["Enemy"] instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94432, 1.10776, 0 )
 
@@ -65,12 +63,3 @@ transform = Transform( -0.901878, 0, -0.431991, 0, 1, 0, 0.431991, 0, -0.901878,
 
 [node name="Enemy2" parent="." groups=["Enemy"] instance=ExtResource( 13 )]
 transform = Transform( 0.422197, -0.0190333, -0.906304, -0.00028529, 0.999777, -0.0211292, 0.906504, 0.00917924, 0.422097, 0, 1.10776, 2.66712 )
-
-[node name="Player" parent="." groups=["Player"] instance=ExtResource( 2 )]
-visible = false
-
-[node name="PlayerGrab" parent="." groups=["Player"] instance=ExtResource( 16 )]
-visible = false
-
-[node name="PlayerDash" parent="." groups=["Player"] instance=ExtResource( 15 )]
-visible = false

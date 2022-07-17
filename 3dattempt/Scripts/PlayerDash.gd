@@ -74,7 +74,7 @@ func _physics_process(delta):
 		if $Head/DashRayCast.is_colliding():
 			print("through wall")
 			var collider = $Head/DashRayCast.get_collider()
-			if collider.name == "Wall":
+			if collider.is_in_group("Wall"):#was ==wall
 				collider.get_node("CollisionShape").disabled = true
 				yield(get_tree().create_timer(1),"timeout")
 				collider.get_node("CollisionShape").disabled = false

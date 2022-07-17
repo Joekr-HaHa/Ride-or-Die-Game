@@ -64,7 +64,7 @@ func _physics_process(delta):
 		path._on_interact()
 	var now=OS.get_ticks_msec()
 	if Input.is_action_pressed("use_ability"):
-		if now>=next_attack_time:
+		if now>=next_attack_time and self.get_node("Head").current:
 			$shootGun.play()
 			next_attack_time=now+time_to_shoot
 			if $Head/GunShoot.is_colliding():
