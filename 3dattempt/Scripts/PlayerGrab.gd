@@ -74,6 +74,9 @@ func _physics_process(delta):
 		var crateInstance = crate.instance()
 		owner.add_child(crateInstance)
 		crateInstance.global_transform = get_node("CrateSpawnPoint").global_transform
+		canCarry = false
+		yield(get_tree().create_timer(0.5),"timeout")
+		canCarry = true
 		
 	if carrying == true:
 		get_node("Box").visible = true
