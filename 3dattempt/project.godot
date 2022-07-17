@@ -19,6 +19,10 @@ config/icon="res://Pictures/icon.png"
 
 Global="*res://Scripts/global.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 move_forward={
