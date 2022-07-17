@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/doorB.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/GLTF format/door_typeB.glb" type="PackedScene" id=5]
@@ -21,7 +20,7 @@
 script = ExtResource( 14 )
 
 [node name="PlayerSpawn" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27783, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8 )
 
 [node name="windowSmall_typeA" parent="." instance=ExtResource( 6 )]
 transform = Transform( -0.996548, 0, 0.083017, 0, 1, 0, -0.083017, 0, -0.996548, -1.89861, 0.282843, 7.10532 )
@@ -29,9 +28,6 @@ transform = Transform( -0.996548, 0, 0.083017, 0, 1, 0, -0.083017, 0, -0.996548,
 [node name="Floor" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00222778, 0.0054391, 0.0021528 )
 collision_mask = 2
-
-[node name="Player" parent="." groups=["Player"] instance=ExtResource( 2 )]
-transform = Transform( 1, 0.000780161, 6.9484e-05, -0.000780257, 0.999999, 0.00136156, -6.84062e-05, -0.00136161, 0.999999, -4.98514, 1, -6.52617 )
 
 [node name="Door" parent="." groups=["Interactibles"] instance=ExtResource( 3 )]
 

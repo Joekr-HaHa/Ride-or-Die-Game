@@ -21,5 +21,4 @@ func _ready():
 		# Use throwing character
 		print("throwing")
 		player = playerGrab.instance()
-		
-	player.transform = get_parent().get_node("PlayerSpawn").transform
+		player.transform = get_parent().get_node("PlayerSpawn").transform
