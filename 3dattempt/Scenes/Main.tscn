@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 [gd_scene load_steps=17 format=2]
+=======
+[gd_scene load_steps=14 format=2]
+>>>>>>> c7d1a6e185c4b847b0b1dc688f3991d733bad9f4
 
 [ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/doorB.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/GLTF format/door_typeB.glb" type="PackedScene" id=5]
@@ -23,7 +26,7 @@
 script = ExtResource( 14 )
 
 [node name="PlayerSpawn" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27783, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8 )
 
 [node name="windowSmall_typeA" parent="." instance=ExtResource( 6 )]
 transform = Transform( -0.996548, 0, 0.083017, 0, 1, 0, -0.083017, 0, -0.996548, -1.89861, 0.282843, 7.10532 )

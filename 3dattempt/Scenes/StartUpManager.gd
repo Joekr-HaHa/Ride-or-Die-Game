@@ -31,6 +31,7 @@ func _ready():
 	else:
 		# Use throwing character
 		print("throwing")
+<<<<<<< HEAD
 		player=get_parent().get_node("PlayerGrab")
 		get_parent().get_node("Player").queue_free()
 		get_parent().get_node("PlayerDash").queue_free()
@@ -41,3 +42,7 @@ func _ready():
 	#player=player.add_to_group("Player")
 	player.transform = get_parent().get_node("PlayerSpawn").transform
 	player.add_to_group("Player")
+=======
+		player = playerGrab.instance()
+		player.transform = get_parent().get_node("PlayerSpawn").transform
+>>>>>>> c7d1a6e185c4b847b0b1dc688f3991d733bad9f4

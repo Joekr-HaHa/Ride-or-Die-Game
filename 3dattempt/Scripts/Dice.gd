@@ -9,7 +9,7 @@ func _input(event):
 		rotation = Vector3(random.randi_range(-90,270),random.randi_range(-90,270),random.randi_range(-90,270))
 		gravity_scale = 1
 		notRolled = false
-		yield(get_tree().create_timer(6),"timeout")
+		yield(get_tree().create_timer(7),"timeout")
 		# Check for face that is touching the floor - opposite is the roll
 		#get_node("RayCast1").enabled = true
 		#get_node("RayCast2").enabled = true
