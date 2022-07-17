@@ -37,9 +37,9 @@ func _input(event):
 		Global.roll = roll
 		
 		var character = "Slugger"
-		if roll == 2 or roll == 5:
+		if roll == 3 or roll == 4:
 			character = "Dash"
-		if roll == 3 or roll == 6:
+		if roll == 5 or roll == 6:
 			character = "Dwayne"
 		
 		get_parent().get_node("UI/HBoxContainer/Label").text = "You rolled a " + str(roll)+"! \n You will play " + character

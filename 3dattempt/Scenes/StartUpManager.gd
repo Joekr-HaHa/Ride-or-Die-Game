@@ -10,7 +10,7 @@ func _ready():
 	# Get roll from previous scene
 	# disable and enable characters depending on value
 	var player
-	if Global.roll == 1 or Global.roll == 4:
+	if Global.roll == 1 or Global.roll == 2:
 		# Use shooting character
 		print("shooting")
 		player=get_parent().get_node("Player")
@@ -19,7 +19,7 @@ func _ready():
 		player.set_process(true)
 		player.visible=true
 		player.get_node("Head").current=true
-	elif Global.roll == 2 or Global.roll == 5:
+	elif Global.roll == 3 or Global.roll == 4:
 		# Use dashing character
 		print("dashing")
 		player=get_parent().get_node("PlayerDash")
